@@ -1,9 +1,18 @@
-type Person = {
-    name: string;
-}
+let nome: string = "Clauber ";
+const lastname: string = "Souza";
 
-const person: Person = {
-    name: "John",
-}
+nome += lastname;
 
-console.log(person.name)
+console.log(nome)
+
+let math: number = 5;
+math += 2;
+
+console.log(math)
+
+let condicao: boolean = true;
+if(condicao == true){
+    console.log("true")
+}else{
+    console.log("false")
+}
