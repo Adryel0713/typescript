@@ -1,18 +1,12 @@
-let nome: string = "Clauber ";
-const lastname: string = "Souza";
+type Status = "Sucesso" | "Fracasso";
 
-nome += lastname;
+const handle =(status: Status) => {
 
-console.log(nome)
+    if(status === "Sucesso"){
+        return;
+    }else if(status === "Fracasso"){
+        return;
+    }
+    const verify: never = status;
 
-let math: number = 5;
-math += 2;
-
-console.log(math)
-
-let condicao: boolean = true;
-if(condicao == true){
-    console.log("true")
-}else{
-    console.log("false")
 }
