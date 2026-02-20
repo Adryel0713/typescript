@@ -1,17 +1,20 @@
-type User = {
-    email?: string,
+type People = {
     name: string,
-    age: number,
-    readonly cpf: string,
+    idade: number
 }
 
-// readonly -> NUNCA PODERÁ SER MUDADO DEPOIS DE DECLARADO
+type Employee = {
+    salary?: number,
+    function: string
+}
 
-const Adryel: User = {
-    email: "adryel0713@gmail.com",
+type Job = People & Employee;
+
+const Adr: Job = {
     name: "Adryel",
-    age: 22,
-    cpf: "000.000.000-00"
+    idade: 22,
+    // salary: 200.0,
+    function: "Gerente"
 }
-Adryel.age = 23;
-console.log(`Email: ${Adryel.email}, name: ${Adryel.name}, age: ${Adryel.age}, cpf: ${Adryel.cpf}`)
+
+console.log(Adr)
