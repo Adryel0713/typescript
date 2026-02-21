@@ -1,20 +1,13 @@
-let password: string | number = "Teste"; // 5 "5" "oi" | (ERR0R) -> true
+let password: "teste" | "teste";
+password = "teste"; // teste2 -> ERROR
 
-type Basic = {
-    name: string,
-    age: number
-}
-type Login = {
-    email: string,
-    password: string
-}
+let senha: "senha" = "senha" // senh -> ERROR
 
-const user: Basic | Login = {
-    // name: "Clauber",
-    // age: 22,
+let numb: 1 | 2 | 3 = 3; // 4 -> ERROR
 
-    email: "teste@gmail.com",
-    password: "teste"
-}
+let array: (1 | 2)[] = [2,1,2,1,2,1,2,1,2,1,2] // 3 -> ERROR
 
-const array: (string | number)[] = ["t",5,7,"323","AD"] //ERROR -> true,false
+const teste = (x: string, array: (1 | 2)[]) => {
+    console.log(x,array)
+};
+teste("Teste",[1,2])
