@@ -1,20 +1,20 @@
-type People = {
+let password: string | number = "Teste"; // 5 "5" "oi" | (ERR0R) -> true
+
+type Basic = {
     name: string,
-    idade: number
+    age: number
+}
+type Login = {
+    email: string,
+    password: string
 }
 
-type Employee = {
-    salary?: number,
-    function: string
+const user: Basic | Login = {
+    // name: "Clauber",
+    // age: 22,
+
+    email: "teste@gmail.com",
+    password: "teste"
 }
 
-type Job = People & Employee;
-
-const Adr: Job = {
-    name: "Adryel",
-    idade: 22,
-    // salary: 200.0,
-    function: "Gerente"
-}
-
-console.log(Adr)
+const array: (string | number)[] = ["t",5,7,"323","AD"] //ERROR -> true,false
