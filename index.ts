@@ -1,13 +1,9 @@
-let password: "teste" | "teste";
-password = "teste"; // teste2 -> ERROR
+const myTurple: [string,string,number] = ["T","E",2]
 
-let senha: "senha" = "senha" // senh -> ERROR
+let myTurple2: [number,number];
+myTurple2 = [2,2];
 
-let numb: 1 | 2 | 3 = 3; // 4 -> ERROR
+const main: [number,number][] = [[2,2],[2,2]]
 
-let array: (1 | 2)[] = [2,1,2,1,2,1,2,1,2,1,2] // 3 -> ERROR
-
-const teste = (x: string, array: (1 | 2)[]) => {
-    console.log(x,array)
-};
-teste("Teste",[1,2])
+const items: (number | string)[] = ["Teste",2,3,3,3,"T2"]
+const games: [string,number,boolean] = ["Game",2,true]
