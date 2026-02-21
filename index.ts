@@ -1,34 +1,19 @@
-class Animal {
-    public name: string;
-    private age: number;
-    protected species: string;
+class GetSet {
+    private idade: number;
 
-    constructor(name: string,age: number, species: string){
-        this.name = name;
-        this.age = age;
-        this.species = species;
+    constructor(idade: number){
+        this.idade = idade;
     }
 
-    protected getName(): string {
-        return this.name;
+    get myIdade(): number {
+        return this.idade;
     }
-    protected getAge(): number{
-        return this.age;
-    }
-    protected getSpecies(): string{
-        return this.species;
+    set myIdade(idade: number) {
+        this.idade = idade;
     }
 }
 
-class Dog extends Animal{
-    constructor(name: string,age: number){
-        super(name,age,"Canine")
-    }
-
-    public getInfo(): string {
-        return `${this.name} is a ${this.getSpecies()} and is ${this.getAge()} years old.`
-    }
-}
-
-const cachorro = new Dog("Pinsher",3);
-console.log(cachorro.getInfo())
+const teste = new GetSet(3);
+console.log(teste.myIdade)
+teste.myIdade = 20;
+console.log(teste.myIdade)
