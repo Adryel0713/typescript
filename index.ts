@@ -1,19 +1,42 @@
-class GetSet {
-    private idade: number;
-
-    constructor(idade: number){
-        this.idade = idade;
-    }
-
-    get myIdade(): number {
-        return this.idade;
-    }
-    set myIdade(idade: number) {
-        this.idade = idade;
-    }
+interface Human {
+    name: string,
+    age: number
 }
 
-const teste = new GetSet(3);
-console.log(teste.myIdade)
-teste.myIdade = 20;
-console.log(teste.myIdade)
+let person: Human = {
+    name: "Adryel",
+    age: 22
+}
+
+console.log(person.name)
+console.log(person.age)
+
+
+/////////////////////////////////
+
+interface Movies {
+    readonly name: string,
+    ratings: number,
+    genra?: string
+}
+
+const movie: Movies = {
+    name: "Velozes e Furiosos",
+    ratings: 7.8,
+    genra: "Action"
+}
+
+console.log(movie)
+
+/////////////////////////////////
+
+interface Calc {
+    (a: number,b:number): number;
+}
+
+const soma: Calc = (a,b) => {
+    return a + b;
+}
+const sub: Calc = function (a,b) {
+    return a - b;
+}
