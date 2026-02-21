@@ -1,42 +1,28 @@
 interface Human {
     name: string,
-    age: number
+    age: number,
+    Falar(): void;
 }
 
-let person: Human = {
+function great(person: Human) {
+    console.log(`${person.name}, ${person.age}`);
+    person.Falar();
+}
+
+const person1: Human = {
     name: "Adryel",
-    age: 22
+    age: 22,
+    Falar() {
+        console.log("Olá!")
+    }
+}
+const person2: Human = {
+    name: "Daniel",
+    age: 17,
+    Falar() {
+        console.log("Tranquilo?")
+    }
 }
 
-console.log(person.name)
-console.log(person.age)
-
-
-/////////////////////////////////
-
-interface Movies {
-    readonly name: string,
-    ratings: number,
-    genra?: string
-}
-
-const movie: Movies = {
-    name: "Velozes e Furiosos",
-    ratings: 7.8,
-    genra: "Action"
-}
-
-console.log(movie)
-
-/////////////////////////////////
-
-interface Calc {
-    (a: number,b:number): number;
-}
-
-const soma: Calc = (a,b) => {
-    return a + b;
-}
-const sub: Calc = function (a,b) {
-    return a - b;
-}
+great(person1)
+great(person2)
