@@ -1,28 +1,15 @@
-interface Human {
-    name: string,
-    age: number,
-    Falar(): void;
+interface Conta {
+    num: string,
+    saldo: number,
+    Exibir(num: string, saldo: number): string
 }
 
-function great(person: Human) {
-    console.log(`${person.name}, ${person.age}`);
-    person.Falar();
-}
-
-const person1: Human = {
-    name: "Adryel",
-    age: 22,
-    Falar() {
-        console.log("Olá!")
-    }
-}
-const person2: Human = {
-    name: "Daniel",
-    age: 17,
-    Falar() {
-        console.log("Tranquilo?")
+const Adryel: Conta = {
+    num: "",
+    saldo: 0,
+    Exibir(num,saldo){
+        return `Número da conta: ${num}, saldo: ${saldo}`;
     }
 }
 
-great(person1)
-great(person2)
+console.log(Adryel.Exibir("4002892222",200))
