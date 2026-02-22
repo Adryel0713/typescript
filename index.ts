@@ -1,22 +1,7 @@
-interface Carro {
-    placa: string,
-    Run(): void;
-}
-interface Carro {
-    placaNova: string;
-    Stop(): void;
+function valores<Type>(n1: Type, n2:Type): [Type,Type] {
+    return [n1,n2];
 }
 
-const vehicle: Carro = {
-    placa: "21A",
-    placaNova: "213ASWDAD",
-    Run() {
-        console.log("RUUUNNNNNNNN!")
-    },
-    Stop() {
-        console.log("Stoped.")
-    }
-}
-
-vehicle.Run()
-vehicle.Stop()
+const num = valores<number>(2,3);
+const str = valores<string>("2","3");
+const bool = valores<boolean>(true,false);
