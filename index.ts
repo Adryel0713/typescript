@@ -1,33 +1,8 @@
-//Gera valores e chaves aleatórias
-const sorteio = <T>(objeto: {[chave: string]: T}): {
-    chave: string;
-    valor: T;
-} => {
-    const chaves = Object.keys(objeto);
-    const random = chaves[Math.floor(Math.random() * chaves.length)];
-
-    return {
-        chave: random,
-        valor: objeto[random],
-    }
+const filtrar = <T>(array: T[], condition: (condicao: T) => boolean): T[] => {
+    return array.filter((item) => condition(item));
 }
 
-const numeros = {
-    n1: 5,
-    n2: 4,
-    n3: 3,
-    n4: 2,
-    n5: 1
-}
-const res = sorteio<number>(numeros)
+const itens = [1,2,3,4,5,6,7,8,9,10]
+const itensFiltrados = filtrar<number>(itens, (item) => item % 2 === 0);
 
-const caracteres = {
-    um: "um",
-    dois: "dois",
-    tres: "tres"
-}
-
-const res2 = sorteio<string>(caracteres)
-
-console.log(res)
-console.log(res2)
+console.log(itensFiltrados)
