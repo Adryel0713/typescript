@@ -1,6 +1,13 @@
-const reversePair = <T, U>(value1: T,value2: U): [U,T] => {
-    return [value2,value1];
+type value = string | number;
+
+const verify = (value: value): void => {
+
+    if(typeof value === "string") {
+        console.log(value.toUpperCase());
+    }else{
+        console.log(value.toFixed(2));
+    }
 }
 
-const reversedPair = reversePair("hello",20);
-console.log(reversedPair)
+verify("tst")
+verify(2)
