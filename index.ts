@@ -1,25 +1,23 @@
-class Dog {
-    latido(): void {
-        console.log("AUAU")
-    }
+type empregado = {
+    id: number,
+    nome: string
 }
 
-class Cat {
-    miau(): void {
-        console.log("MIAU")
-    }
+type chefe = {
+    departament: string,
+    role: string
 }
 
-const somAnimal = (som: Dog | Cat): void => {
-    if(som instanceof Dog){
-        som.latido();
-    }else{
-        som.miau();
-    }
+type ambos = empregado & chefe;
+
+const manager: ambos = {
+    id: 1,
+    nome: "Clauber",
+    departament: "Finanças",
+    role: "admin"
 }
 
-const myDog = new Dog();
-const myCat = new Cat();
-
-somAnimal(myDog);
-somAnimal(myCat);
+console.log(manager.id)
+console.log(manager.nome)
+console.log(manager.departament)
+console.log(manager.role)
