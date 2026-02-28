@@ -1,13 +1,25 @@
-type value = string | number;
-
-const verify = (value: value): void => {
-
-    if(typeof value === "string") {
-        console.log(value.toUpperCase());
-    }else{
-        console.log(value.toFixed(2));
+class Dog {
+    latido(): void {
+        console.log("AUAU")
     }
 }
 
-verify("tst")
-verify(2)
+class Cat {
+    miau(): void {
+        console.log("MIAU")
+    }
+}
+
+const somAnimal = (som: Dog | Cat): void => {
+    if(som instanceof Dog){
+        som.latido();
+    }else{
+        som.miau();
+    }
+}
+
+const myDog = new Dog();
+const myCat = new Cat();
+
+somAnimal(myDog);
+somAnimal(myCat);
