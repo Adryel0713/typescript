@@ -1,23 +1,28 @@
-type empregado = {
+import axios, { AxiosResponse } from "axios";
+
+interface Todo {
+    userId: number,
     id: number,
-    nome: string
+    title: string,
+    completed: boolean
+}
+const fechData = async () => {
+    try {
+        const response: AxiosResponse<Todo> = await axios.get("https://jsonplaceholder.typicode.com/todos/1");
+
+        console.log(response.data)
+    }catch(error: any) {
+        if(axios.isAxiosError(error)) {
+            console.error("Axios Error", error.message); 
+
+            if(error.response){
+                console.log("Status: ",error.response.status)
+                console.log("Data: ",error.response.data)
+            }
+        }else{
+            console.error("Error: ",error.message);
+        }
+    }
 }
 
-type chefe = {
-    departament: string,
-    role: string
-}
-
-type ambos = empregado & chefe;
-
-const manager: ambos = {
-    id: 1,
-    nome: "Clauber",
-    departament: "Finanças",
-    role: "admin"
-}
-
-console.log(manager.id)
-console.log(manager.nome)
-console.log(manager.departament)
-console.log(manager.role)
+fechData();
